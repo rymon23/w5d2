@@ -20,12 +20,12 @@ class Sub < ApplicationRecord
     foreign_key: :user_id,
     class_name: :User
 
-  has_many :post_subs,
+  has_many :post_subs, dependent: :destroy, inverse_of: :post,
     primary_key: :id,
     foreign_key: :sub_id,
     class_name: :PostSub
    
-  has_many :posts,
+  has_many :posts, dependent: :destroy,
     through: :post_subs,
     source: :post
 end

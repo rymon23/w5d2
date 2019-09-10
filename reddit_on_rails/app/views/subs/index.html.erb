@@ -3,7 +3,11 @@
 <ul>
   <% @subs.each do |sub| %>
   <li>
+
       <a href="<%= sub_url(sub) %>"><%= sub.title %></a>
+      <a href="<%= edit_sub_url(sub) %>">Edit</a>
   </li>
   <% end %>
 </ul>
+
+<a href="<%= new_sub_url %>">New Sub</a>
